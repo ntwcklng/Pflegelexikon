@@ -9,23 +9,19 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView
 } from 'react-native';
+
+import Accordion from './app/Components/Accordion';
+
+import PoliturenData from './app/Data/Polituren';
 
 class AutopflegeLexikon extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <ScrollView><Accordion data={PoliturenData}/></ScrollView>
       </View>
     );
   }
@@ -34,9 +30,8 @@ class AutopflegeLexikon extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    paddingHorizontal: 0,
+    marginTop: 30,
   },
   welcome: {
     fontSize: 20,
